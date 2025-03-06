@@ -1,0 +1,618 @@
+{
+    "idDeclaration": 19968435,
+    "idApplication": null,
+    "idTechnicalReglaments": [
+        27,
+        97161
+    ],
+    "idDeclScheme": 128,
+    "idObjectDeclType": 3,
+    "idGroups": [
+        1354
+    ],
+    "idDeclType": 2,
+    "idProductSingleLists": [],
+    "awaitForApprove": false,
+    "editApp": false,
+    "unpublishedChanges": false,
+    "idStatus": 6,
+    "assignRegNumber": false,
+    "number": "ЕАЭС N RU Д-CN.РА02.В.60804/25",
+    "tempNumber": "врЕАЭС(ТР).РА02.67796/25",
+    "submissionDate": null,
+    "declRegDate": "2025-03-05",
+    "declEndDate": "2030-03-04",
+    "noSanction": true,
+    "draftCreationDate": "2025-03-05T15:12:17.14857",
+    "publishDate": "2025-03-05T19:15:24.483416",
+    "violationPublishDate": null,
+    "changePublishDate": "2025-03-05T19:15:24.483416",
+    "lastUpdate": "2025-03-05T19:15:24.654444",
+    "applicationNumber": null,
+    "applicationDate": null,
+    "applicationSubmissionDate": null,
+    "idApplicationStatus": null,
+    "idSigner": null,
+    "idSignerEmployee": null,
+    "firstName": null,
+    "surname": null,
+    "patronymic": null,
+    "snils": null,
+    "functions": null,
+    "annexes": [],
+    "applicant": {
+        "idLegalSubject": 37119398,
+        "idEgrul": null,
+        "idApplicantType": 1,
+        "idLegalSubjectType": 1,
+        "fullName": "АКЦИОНЕРНОЕ ОБЩЕСТВО \"ОМИА АЛГОЛ РУС\"",
+        "shortName": "АО \"ОМИА АЛГОЛ РУС\"",
+        "idPerson": 60918174,
+        "surname": "Челышкова",
+        "firstName": "Мария",
+        "patronymic": "Юрьевна",
+        "snils": null,
+        "headPosition": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+        "applicantHead": false,
+        "idResponsiblePerson": 60918175,
+        "responsibleSurname": "Русинова",
+        "responsibleFirstName": "Юлия",
+        "responsiblePatronymic": "Александровна",
+        "responsiblePosition": "Менеджер по нормативно-правовому регулированию",
+        "responsibleDocName": "доверенность",
+        "responsibleDocNumber": "3-23",
+        "responsibleDocDate": "2023-01-12",
+        "responsibleContacts": [],
+        "ogrn": "1027807980650",
+        "ogrnAssignDate": "2002-10-18",
+        "inn": "7816108883",
+        "kpp": "770501001",
+        "idLegalForm": 8,
+        "idKopf": null,
+        "nameLegalForm": null,
+        "regDate": "2015-03-15",
+        "regOrganName": "Межрайонная инспекция Федеральной налоговой службы № 46 по г. Москве",
+        "addlRegInfo": null,
+        "isEecRegister": true,
+        "contacts": [
+            {
+                "idContact": 46158712,
+                "idContactType": 4,
+                "value": "regulatory.russia@omyacis.com"
+            },
+            {
+                "idContact": 46158711,
+                "idContactType": 1,
+                "value": "+74959255630"
+            }
+        ],
+        "addresses": [
+            {
+                "idAddress": 100897475,
+                "idAddrType": 1,
+                "idCodeOksm": "643",
+                "oksmShort": true,
+                "idSubject": null,
+                "idDistrict": null,
+                "idCity": null,
+                "idLocality": null,
+                "idStreet": null,
+                "idHouse": null,
+                "flat": null,
+                "postCode": "115054",
+                "fullAddress": "115054, Россия, г. Москва, вн. тер. г. муниципальный округ Замоскворечье, наб. Космодамианская д. 52, стр. 4",
+                "gln": null,
+                "foreignDistrict": null,
+                "foreignCity": null,
+                "foreignLocality": null,
+                "foreignStreet": null,
+                "foreignHouse": null,
+                "uniqueAddress": null,
+                "otherGln": null,
+                "glonass": null
+            }
+        ],
+        "transnational": []
+    },
+    "applicantFilials": [],
+    "manufIsApplicant": false,
+    "manufacturer": {
+        "idLegalSubject": 37119399,
+        "idEgrul": null,
+        "idLegalSubjectType": 3,
+        "fullName": "Inner Mongolia Weinihao Biotechnology Co., Ltd.",
+        "shortName": null,
+        "idPerson": null,
+        "surname": null,
+        "firstName": null,
+        "patronymic": null,
+        "snils": null,
+        "headPosition": null,
+        "applicantHead": false,
+        "idResponsiblePerson": null,
+        "responsibleSurname": null,
+        "responsibleFirstName": null,
+        "responsiblePatronymic": null,
+        "responsiblePosition": null,
+        "responsibleDocName": null,
+        "responsibleDocNumber": null,
+        "responsibleDocDate": null,
+        "responsibleContacts": null,
+        "ogrn": null,
+        "ogrnAssignDate": null,
+        "inn": null,
+        "kpp": null,
+        "idLegalForm": null,
+        "idKopf": null,
+        "nameLegalForm": null,
+        "regDate": null,
+        "regOrganName": null,
+        "addlRegInfo": null,
+        "isEecRegister": false,
+        "contacts": [],
+        "addresses": [
+            {
+                "idAddress": 100897476,
+                "idAddrType": 1,
+                "idCodeOksm": "156",
+                "oksmShort": true,
+                "idSubject": null,
+                "idDistrict": null,
+                "idCity": null,
+                "idLocality": null,
+                "idStreet": null,
+                "idHouse": null,
+                "flat": null,
+                "postCode": null,
+                "fullAddress": "Китай, No. 11, Fengshou Street, Xinhui Town Industrial Park, Aohan County, Chifeng City, Inner Mongolia Autonomous Region, 024300 P.R. China",
+                "gln": null,
+                "foreignDistrict": "No. 11, Fengshou Street, Xinhui Town Industrial Park, Aohan County, Chifeng City, Inner Mongolia Autonomous Region, 024300 P.R. China",
+                "foreignCity": null,
+                "foreignLocality": null,
+                "foreignStreet": null,
+                "foreignHouse": null,
+                "uniqueAddress": null,
+                "otherGln": null,
+                "glonass": null
+            }
+        ],
+        "transnational": []
+    },
+    "manufacturerFilials": [
+        {
+            "idFilial": 24116881,
+            "fullName": "Адрес места осуществления деятельности по изготовлению продукции:",
+            "shortName": null,
+            "idLegalForm": null,
+            "idKopf": null,
+            "nameLegalForm": null,
+            "egrulSelected": false,
+            "kpp": null,
+            "annex": false,
+            "contacts": [],
+            "addresses": [
+                {
+                    "idAddress": 100897477,
+                    "idAddrType": 3,
+                    "idCodeOksm": "156",
+                    "oksmShort": true,
+                    "idSubject": null,
+                    "idDistrict": null,
+                    "idCity": null,
+                    "idLocality": null,
+                    "idStreet": null,
+                    "idHouse": null,
+                    "flat": "42.298345, 119.901729",
+                    "postCode": null,
+                    "fullAddress": "Китай, No. 11, Fengshou Street, Xinhui Town Industrial Park, Aohan County, Chifeng City, Inner Mongolia Autonomous Region, 024300 P.R. China, 42.298345, 119.901729",
+                    "gln": null,
+                    "foreignDistrict": "No. 11, Fengshou Street, Xinhui Town Industrial Park, Aohan County, Chifeng City, Inner Mongolia Autonomous Region, 024300 P.R. China",
+                    "foreignCity": null,
+                    "foreignLocality": null,
+                    "foreignStreet": null,
+                    "foreignHouse": null,
+                    "uniqueAddress": null,
+                    "otherGln": null,
+                    "glonass": null
+                }
+            ]
+        }
+    ],
+    "certificationAuthority": null,
+    "accreditationBody": null,
+    "product": {
+        "idProduct": 17195077,
+        "idProductOrigin": "156",
+        "fullName": "Пищевой ингредиент: инулин (пищевое волокно из цикория, растворимая клетчатка), VILOF-NanoST P90",
+        "marking": null,
+        "usageScope": null,
+        "storageCondition": "Условия хранения: хранить в закрытой оригинальной упаковке в сухом и прохладном месте. Упаковка: многослойный бумажный мешок c полиэтиленовым вкладышем, 20кг. Срок годности:  4 года с даты изготовления при условии хранения в закрытой оригинальной упаковке. Дата изготовления указана в прилагаемой к продукции товаросопроводительной документации и/или на упаковке каждой единицы продукции. Не для розничной продажи. Продукция изготовлена в соответствии со спецификацией изготовителя.",
+        "usageCondition": null,
+        "batchSize": null,
+        "batchId": null,
+        "identification": null,
+        "identifications": [
+            {
+                "idIdentification": 19573350,
+                "annex": false,
+                "name": ".",
+                "type": null,
+                "tradeMark": null,
+                "model": null,
+                "article": null,
+                "sort": null,
+                "idOkpds": [],
+                "idTnveds": [
+                    60797
+                ],
+                "gtin": [
+                    ""
+                ],
+                "lifeTime": null,
+                "storageTime": null,
+                "description": "Декларация соответствия распространяется на продукцию, изготовленную с даты изготовления отобранных образцов (проб) продукции, прошедших исследования (испытания) и измерения: 25.12.2024",
+                "amount": null,
+                "idOkei": null,
+                "factoryNumber": null,
+                "productionDate": null,
+                "expiryDate": null,
+                "documents": [
+                    {
+                        "idProductionDocument": 14481529,
+                        "name": "Продукция изготовлена в соответствии с спецификация изготовителя",
+                        "number": null,
+                        "date": null
+                    }
+                ],
+                "standards": []
+            }
+        ]
+    },
+    "experts": [],
+    "statusChanges": [
+        {
+            "idChangeStatus": 33326751,
+            "idStatus": 20,
+            "beginDate": "2025-03-05T15:12:17.14857",
+            "endDate": "2025-03-05T19:15:24.483416",
+            "comment": null,
+            "idBasis": null,
+            "publicated": true,
+            "publishDate": "2025-03-05T19:15:24.664",
+            "lkType": null,
+            "idMrpa": null,
+            "docName": null,
+            "docNumber": null,
+            "docDate": null,
+            "prescription": null,
+            "idFileScan": null,
+            "idBasisSolutions": [],
+            "levelStateControl": null,
+            "typeStateControl": null,
+            "idOngoingEvent": null
+        },
+        {
+            "idChangeStatus": 33328709,
+            "idStatus": 6,
+            "beginDate": "2025-03-05T19:15:24.483416",
+            "endDate": null,
+            "comment": null,
+            "idBasis": null,
+            "publicated": true,
+            "publishDate": "2025-03-05T19:15:24.664",
+            "lkType": null,
+            "idMrpa": null,
+            "docName": null,
+            "docNumber": null,
+            "docDate": null,
+            "prescription": null,
+            "idFileScan": null,
+            "idBasisSolutions": [],
+            "levelStateControl": null,
+            "typeStateControl": null,
+            "idOngoingEvent": null
+        }
+    ],
+    "testingLabs": [
+        {
+            "idTestingLab": 22295679,
+            "annex": false,
+            "idRal": null,
+            "regNumber": "RA.RU.21АЗ43",
+            "fullName": "Испытательный центр № 300 Федерального бюджетного учреждения «Научно-исследовательский центр прикладной метрологии – Ростест»",
+            "beginDate": "2016-03-23",
+            "endDate": null,
+            "basis": null,
+            "idAccredPlace": "643",
+            "isAccredEec": true,
+            "address": {
+                "idAddress": 100897478,
+                "idAddrType": 3,
+                "idCodeOksm": "643",
+                "oksmShort": true,
+                "idSubject": null,
+                "idDistrict": null,
+                "idCity": null,
+                "idLocality": null,
+                "idStreet": null,
+                "idHouse": null,
+                "flat": null,
+                "postCode": null,
+                "fullAddress": "Российская Федерация",
+                "gln": null,
+                "foreignDistrict": null,
+                "foreignCity": null,
+                "foreignLocality": null,
+                "foreignStreet": null,
+                "foreignHouse": null,
+                "uniqueAddress": null,
+                "otherGln": null,
+                "glonass": null
+            },
+            "protocols": [
+                {
+                    "idProtocol": 14602227,
+                    "idProtocolRpi": 272592324,
+                    "number": "002493-25",
+                    "date": "2025-02-28",
+                    "idFile": "5d03c527-88e6-4726-b451-315fa4ac697e",
+                    "standards": [],
+                    "isProtocolInvalid": false
+                }
+            ],
+            "importedForResearchTesting": true,
+            "docConfirmCustom": [
+                {
+                    "idDocConfirmCustom": 5204469,
+                    "idDocConfirmCustomType": 1,
+                    "customInfo": [
+                        {
+                            "idCustomInfo": 1406361,
+                            "customDeclNumber": "10317120/060225/5022030",
+                            "amount": null,
+                            "idMeasure": null,
+                            "otherMeasure": null,
+                            "contractNumber": null,
+                            "contractDate": null,
+                            "idAccredPlace": "643",
+                            "isAccredEec": true,
+                            "accreditedPersonName": null,
+                            "attestatRegNumber": null
+                        }
+                    ],
+                    "otherDocs": [],
+                    "reasonNonRegistrCustomsDeclaration": null
+                }
+            ],
+            "ogrn": null,
+            "inn": null,
+            "accredEec": true
+        }
+    ],
+    "documents": {
+        "productTypeApplicationDecision": null,
+        "productTypeContract": null,
+        "productTypeResearchConclusion": {
+            "idTechnicalRegulation": null,
+            "annex": false,
+            "number": null,
+            "issueDate": null,
+            "idAccredPlace": "643",
+            "isAccredEec": true,
+            "accreditedPersonName": null,
+            "attestatRegNumber": null,
+            "attestatRegDate": null,
+            "attestatEndDate": null,
+            "sampleProduct": null,
+            "idFile": null
+        },
+        "productTypeCertificates": [],
+        "qmsCertificates": [],
+        "productionControlResults": [],
+        "reportsOnTypeApprovalUnderUNRegulation": [],
+        "protocolTestingTechnicalService": null,
+        "complianceStandards": [],
+        "commonDocuments": {
+            "97161": [
+                {
+                    "id": 2450817,
+                    "idDocType": 48,
+                    "number": "02072024",
+                    "date": "2024-07-02",
+                    "name": "Договор уполномоченного изготовителем лица с изготовителем №02072024 от 02.07.2024",
+                    "idFile": "d454d5d6-98dd-4966-b536-aa7a844c56c9"
+                },
+                {
+                    "id": 2450818,
+                    "idDocType": 48,
+                    "number": "б/н",
+                    "date": "2025-02-05",
+                    "name": "Уведомление",
+                    "idFile": "530a28e2-4ad3-4853-a8d8-e39dd65e03b1"
+                },
+                {
+                    "id": 2450819,
+                    "idDocType": 48,
+                    "number": "б/н",
+                    "date": "2025-03-05",
+                    "name": "Техническое досье, состоящее из документов, содержащих доказательства соответствия продукции требованиям технического (-их) регламента (-ов)",
+                    "idFile": "56c30e05-b8af-4a3d-8e81-e194f2a886dd"
+                },
+                {
+                    "id": 2450820,
+                    "idDocType": 48,
+                    "number": "467945",
+                    "date": "2025-02-17",
+                    "name": "Письмо о ввозе",
+                    "idFile": "b6427ba2-b442-45ca-9f15-26117929a69f"
+                },
+                {
+                    "id": 2450821,
+                    "idDocType": 48,
+                    "number": "3-23",
+                    "date": "2023-03-12",
+                    "name": "Доверенность №3-23 от 12.03.2023",
+                    "idFile": "e6484cbe-bb3b-4297-9105-e237ef6c74a5"
+                }
+            ],
+            "27": [
+                {
+                    "id": 2450812,
+                    "idDocType": 48,
+                    "number": "02072024",
+                    "date": "2024-07-02",
+                    "name": "Договор уполномоченного изготовителем лица с изготовителем №02072024 от 02.07.2024",
+                    "idFile": "d454d5d6-98dd-4966-b536-aa7a844c56c9"
+                },
+                {
+                    "id": 2450813,
+                    "idDocType": 48,
+                    "number": "б/н",
+                    "date": "2025-02-05",
+                    "name": "Уведомление",
+                    "idFile": "530a28e2-4ad3-4853-a8d8-e39dd65e03b1"
+                },
+                {
+                    "id": 2450814,
+                    "idDocType": 48,
+                    "number": "б/н",
+                    "date": "2025-03-05",
+                    "name": "Техническое досье, состоящее из документов, содержащих доказательства соответствия продукции требованиям технического (-их) регламента (-ов)",
+                    "idFile": "56c30e05-b8af-4a3d-8e81-e194f2a886dd"
+                },
+                {
+                    "id": 2450815,
+                    "idDocType": 48,
+                    "number": "467945",
+                    "date": "2025-02-17",
+                    "name": "Письмо о ввозе",
+                    "idFile": "b6427ba2-b442-45ca-9f15-26117929a69f"
+                },
+                {
+                    "id": 2450816,
+                    "idDocType": 48,
+                    "number": "3-23",
+                    "date": "2023-03-12",
+                    "name": "Доверенность №3-23 от 12.03.2023",
+                    "idFile": "e6484cbe-bb3b-4297-9105-e237ef6c74a5"
+                }
+            ]
+        },
+        "foreignManufacturerContract": {
+            "number": "02072024",
+            "date": "2024-07-02",
+            "endDate": null,
+            "subject": "Договор уполномоченного изготовителем лица с изготовителем №02072024 от 02.07.2024",
+            "applicantResponsibility": null,
+            "manufacturerResponsibility": null
+        },
+        "componentCertificates": [],
+        "vehicleChassisTypeApproval": {
+            "annex": false,
+            "number": null,
+            "issueDate": null,
+            "endDate": null,
+            "idAccredPlace": "643",
+            "isAccredEec": false,
+            "certOrganName": null,
+            "attestatRegNumber": null,
+            "attestatRegDate": null,
+            "attestatEndDate": null,
+            "idFile": null
+        },
+        "applicantOtherDocuments": [
+            {
+                "idApplicantOtherDocument": 4881432,
+                "annex": false,
+                "name": "Доверенность №3-23 от 12.03.2023",
+                "number": "3-23",
+                "date": "2023-03-12",
+                "idCategory": 6,
+                "idFile": "e6484cbe-bb3b-4297-9105-e237ef6c74a5"
+            },
+            {
+                "idApplicantOtherDocument": 4881431,
+                "annex": false,
+                "name": "Письмо о ввозе",
+                "number": "467945",
+                "date": "2025-02-17",
+                "idCategory": 6,
+                "idFile": "b6427ba2-b442-45ca-9f15-26117929a69f"
+            },
+            {
+                "idApplicantOtherDocument": 4881430,
+                "annex": false,
+                "name": "Техническое досье, состоящее из документов, содержащих доказательства соответствия продукции требованиям технического (-их) регламента (-ов)",
+                "number": "б/н",
+                "date": "2025-03-05",
+                "idCategory": 6,
+                "idFile": "56c30e05-b8af-4a3d-8e81-e194f2a886dd"
+            },
+            {
+                "idApplicantOtherDocument": 4881429,
+                "annex": false,
+                "name": "Уведомление",
+                "number": "б/н",
+                "date": "2025-02-05",
+                "idCategory": 6,
+                "idFile": "530a28e2-4ad3-4853-a8d8-e39dd65e03b1"
+            },
+            {
+                "idApplicantOtherDocument": 4881428,
+                "annex": false,
+                "name": "Договор уполномоченного изготовителем лица с изготовителем №02072024 от 02.07.2024",
+                "number": "02072024",
+                "date": "2024-07-02",
+                "idCategory": 6,
+                "idFile": "d454d5d6-98dd-4966-b536-aa7a844c56c9"
+            }
+        ]
+    },
+    "scanCopy": [
+        {
+            "idFile": "b6427ba2-b442-45ca-9f15-26117929a69f",
+            "name": "Письмо о ввозе",
+            "idType": 6
+        },
+        {
+            "idFile": "e6484cbe-bb3b-4297-9105-e237ef6c74a5",
+            "name": "Доверенность №3-23 от 12.03.2023",
+            "idType": 5
+        },
+        {
+            "idFile": "530a28e2-4ad3-4853-a8d8-e39dd65e03b1",
+            "name": "Уведомление",
+            "idType": 5
+        },
+        {
+            "idFile": "5d03c527-88e6-4726-b451-315fa4ac697e",
+            "name": "Протокол №002493-25 от 28.02.2025",
+            "idType": 4
+        },
+        {
+            "idFile": "56c30e05-b8af-4a3d-8e81-e194f2a886dd",
+            "name": "Техническое досье, состоящее из документов, содержащих доказательства соответствия продукции требованиям технического (-их) регламента (-ов)",
+            "idType": 4
+        },
+        {
+            "idFile": "d454d5d6-98dd-4966-b536-aa7a844c56c9",
+            "name": "Договор уполномоченного изготовителем лица с изготовителем №02072024 от 02.07.2024",
+            "idType": 3
+        }
+    ],
+    "isSrd": true,
+    "idStatusTestingLabs": 2,
+    "idReplacementReason": [],
+    "idDeclarationReplaced": null,
+    "idDeclarationRegInstead": null,
+    "declarationReplacedNum": null,
+    "declarationRegInsteadNum": null,
+    "changes": null,
+    "idDeclarationChecker": null,
+    "showInOpenPart": true,
+    "idMrpa": null,
+    "declStage": {
+        "idStage": 7,
+        "isValid": true
+    }
+}

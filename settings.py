@@ -7,23 +7,17 @@ END_DATE = TODAY.strftime(DATE_FORMAT)
 PRODUCT_ORIGIN = "156"  # Китай
 PAGE_SIZE = 100
 
+LOGIN_URL = "https://pub.fsa.gov.ru/login"
+DECLARATIONS_URL = "https://pub.fsa.gov.ru/api/v1/rds/common/declarations/{}"
+
+AUTH_PAYLOAD = {"password": "hrgesf7HDR67Bd", "username": "anonymous"}
 
 HEADERS = {
     'Accept': 'application/json, text/plain, */*',
     'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,cy;q=0.6',
-    # 'Cache-Control': 'no-cache',
-    # 'Connection': 'keep-alive',
     'Content-Type': 'application/json',
-    # 'Origin': 'https://pub.fsa.gov.ru',
-    # 'Pragma': 'no-cache',
-    # 'Referer': 'https://pub.fsa.gov.ru/rds/declaration',
-    # 'Sec-Fetch-Dest': 'empty',
-    # 'Sec-Fetch-Mode': 'cors',
-    # 'Sec-Fetch-Site': 'same-origin',
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
     'sec-ch-ua': '"Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"',
-    # 'sec-ch-ua-mobile': '?0',
-    # 'sec-ch-ua-platform': '"Linux"'
 }
 
 GET_PAYLOAD = {

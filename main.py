@@ -10,7 +10,7 @@ class Parser(requests.Session):
 
     def __init__(self):
         super().__init__()
-        self.headers = HEADERS
+        self.headers = HEADERS.copy()
         self.authenticate()
 
     def request(self, *args, **kwargs):
@@ -18,13 +18,12 @@ class Parser(requests.Session):
         return super().request(*args, **kwargs)
 
     def authenticate(self):
-        payload = {"password": "hrgesf7HDR67Bd", "username": "anonymous"}
-        response = self.post(url="https://pub.fsa.gov.ru/login", json=payload)
+        response = self.post(url=LOGIN_URL, json=AUTH_PAYLOAD)
         if response.status_code == 200:
             self.headers['authorization'] = response.headers['authorization']
 
     def get_declaration_page(self, page=0):
-        url = "https://pub.fsa.gov.ru/api/v1/rds/common/declarations/get"
+        url = DECLARATIONS_URL.format("get")
         payload = deepcopy(GET_PAYLOAD)
         payload['filter']['regDate'] = {"minDate": START_DATE, "maxDate": END_DATE}
         payload['page'] = page
@@ -34,22 +33,25 @@ class Parser(requests.Session):
         return []
 
     def get_applicant_details(self, _id):
-        url = f"https://pub.fsa.gov.ru/api/v1/rds/common/declarations/{_id}"  # noqa
+        url = DECLARATIONS_URL.format(_id)  # noqa
         response = self.get(url)
         if response.status_code == 200:
             return unpack_declaration(json.loads(response.text))
 
     def get_all_declarations(self):
+
+        def extend_info(declaration):
+            return declaration + self.get_applicant_details(declaration[0])
+
         page = 0
         result = []
         while True:
-            if data := self.get_declaration_page(page):
-                data = tuple(map(lambda x: x + self.get_applicant_details(x[0]),
-                             map(unpack_search_item, data)))
-                result.extend(data)
-                page += 1
+            declarations = map(unpack_search_item, self.get_declaration_page(page))
+            data = tuple(map(extend_info, declarations))
+            result.extend(data)
             if len(data) != PAGE_SIZE:
                 break
+            page += 1
         return result
 
 

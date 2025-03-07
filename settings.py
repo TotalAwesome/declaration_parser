@@ -4,6 +4,7 @@ DATE_FORMAT = "%Y-%m-%d"
 TODAY = datetime.datetime.now().date()
 START_DATE = (TODAY - datetime.timedelta(days=365)).strftime(DATE_FORMAT)
 END_DATE = TODAY.strftime(DATE_FORMAT)
+END_DATE = (TODAY - datetime.timedelta(days=1)).strftime(DATE_FORMAT)
 PRODUCT_ORIGIN = "156"  # Китай
 PAGE_SIZE = 100
 

@@ -4,6 +4,7 @@ from utils import *
 from copy import deepcopy
 
 from settings import *
+from db import add_declaration
 
 
 class Parser(requests.Session):
@@ -14,7 +15,7 @@ class Parser(requests.Session):
         self.authenticate()
 
     def request(self, *args, **kwargs):
-        # print(args, kwargs)
+        print(args, kwargs)
         return super().request(*args, **kwargs)
 
     def authenticate(self):
@@ -22,10 +23,10 @@ class Parser(requests.Session):
         if response.status_code == 200:
             self.headers['authorization'] = response.headers['authorization']
 
-    def get_declaration_page(self, page=0):
+    def get_declaration_page(self, page=0, date=END_DATE):
         url = DECLARATIONS_URL.format("get")
         payload = deepcopy(GET_PAYLOAD)
-        payload['filter']['regDate'] = {"minDate": START_DATE, "maxDate": END_DATE}
+        payload['filter']['regDate'] = {"minDate": date, "maxDate": date}
         payload['page'] = page
         response = self.post(url=url, json=payload)
         if response.status_code == 200:
@@ -41,18 +42,19 @@ class Parser(requests.Session):
     def get_all_declarations(self):
 
         def extend_info(declaration):
-            return declaration + self.get_applicant_details(declaration[0])
+            declaration_data = declaration + self.get_applicant_details(declaration[0])
+            print("Try to add: ", declaration_data)
+            add_declaration(*declaration_data)
+            return True
 
         page = 0
-        result = []
         while True:
             declarations = map(unpack_search_item, self.get_declaration_page(page))
             data = tuple(map(extend_info, declarations))
-            result.extend(data)
             if len(data) != PAGE_SIZE:
                 break
             page += 1
-        return result
+        return
 
 
 if __name__ == "__main__":

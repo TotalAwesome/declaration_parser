@@ -8,16 +8,26 @@ def unpack_search_item(item):
 
 def unpack_declaration(declaration):
     applicant = declaration["applicant"]
-    person_name = " ".join(
+    head_person = " ".join(
         (
             applicant["surname"] or "",
             applicant["firstName"] or "",
-            applicant["patronymic"] or ""
+            applicant["patronymic"] or "",
+            ("({})".format(applicant["headPosition"]) if applicant["headPosition"] else None) or ""
         )
     )
-    contacts = (i["value"] for i in applicant["contacts"] if i)
+    responsible_person = " ".join(
+        (
+            applicant["responsibleSurname"] or "",
+            applicant["responsibleFirstName"] or "",
+            applicant["responsiblePatronymic"] or "",
+            ("({})".format(applicant["responsiblePosition"]) if applicant["responsiblePosition"] else None) or ""
+        )
+    )
+    contacts = (i["value"].lower() for i in applicant["contacts"] if i)
     return (
         applicant["fullName"],
-        person_name,
+        head_person.strip() or None,
+        responsible_person.strip() or None,
         *contacts
     )

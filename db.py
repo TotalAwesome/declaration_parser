@@ -39,12 +39,16 @@ class Contact(BaseModel):
     class Type:
         EMAIL = 1
         PHONE = 2
+        WEB = 3
 
     __tablename__ = "contacts"
 
     value = Column(String, primary_key=True, comment="Контакт")
     contact_type = Column(SmallInteger, nullable=False, comment="Тип контакта")
     declaration_id = Column(Integer, ForeignKey('declarations.id'))
+
+
+BaseModel.metadata.create_all(bind=engine)
 
 
 def add_declaration(declaration_id,
@@ -54,7 +58,6 @@ def add_declaration(declaration_id,
                     responsible_person,
                     *contacts):
 
-    BaseModel.metadata.create_all(bind=engine)
     query = session.query(Contact).filter(or_(*(Contact.value == contact for contact in contacts)))
 
     if not session.query(query.exists()).scalar():
@@ -72,7 +75,12 @@ def add_declaration(declaration_id,
         session.refresh(declaration)
 
         for contact in contacts:
-            contact_type = Contact.Type.EMAIL if '@' in contact else Contact.Type.PHONE
+            if '@' in contact:
+                contact_type = Contact.Type.EMAIL
+            elif '.' in contact:
+                contact_type = Contact.Type.WEB
+            else:
+                contact_type = Contact.Type.PHONE
             session.add(
                 Contact(contact_type=contact_type,
                         value=contact,

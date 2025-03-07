@@ -15,7 +15,7 @@ def unpack_declaration(declaration):
             applicant["patronymic"] or "",
             ("({})".format(applicant["headPosition"]) if applicant["headPosition"] else None) or ""
         )
-    )
+    ).strip() or None
     responsible_person = " ".join(
         (
             applicant["responsibleSurname"] or "",
@@ -23,11 +23,11 @@ def unpack_declaration(declaration):
             applicant["responsiblePatronymic"] or "",
             ("({})".format(applicant["responsiblePosition"]) if applicant["responsiblePosition"] else None) or ""
         )
-    )
+    ).strip() or None
     contacts = (i["value"].lower() for i in applicant["contacts"] if i)
     return (
-        applicant["fullName"],
-        head_person.strip() or None,
-        responsible_person.strip() or None,
-        *contacts
+        applicant["fullName"] or head_person or responsible_person,
+        head_person,
+        responsible_person,
+        *set(contacts)
     )

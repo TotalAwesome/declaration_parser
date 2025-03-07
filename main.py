@@ -1,5 +1,7 @@
 import requests
 import orjson as json
+import time
+
 from utils import *
 from copy import deepcopy
 
@@ -45,7 +47,7 @@ class Parser(requests.Session):
             declaration_data = declaration + self.get_applicant_details(declaration[0])
             print("Try to add: ", declaration_data)
             add_declaration(*declaration_data)
-            return True
+            time.sleep(0.2)
 
         page = 0
         while True:

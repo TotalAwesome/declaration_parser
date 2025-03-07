@@ -51,6 +51,11 @@ class Contact(BaseModel):
 BaseModel.metadata.create_all(bind=engine)
 
 
+def declaration_not_exists(declaration_id):
+    query = session.query(Declaration).filter(Declaration.id == declaration_id)
+    return not session.query(query.exists()).scalar()
+
+
 def add_declaration(declaration_id,
                     declaration_date,
                     applicant_name,

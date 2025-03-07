@@ -6,7 +6,7 @@ from utils import *
 from copy import deepcopy
 
 from settings import *
-from db import add_declaration
+from db import add_declaration, declaration_not_exists
 
 
 class Parser(requests.Session):
@@ -44,10 +44,11 @@ class Parser(requests.Session):
     def get_all_declarations(self):
 
         def extend_info(declaration):
-            declaration_data = declaration + self.get_applicant_details(declaration[0])
-            print("Try to add: ", declaration_data)
-            add_declaration(*declaration_data)
-            time.sleep(0.2)
+            if declaration_not_exists(declaration[0]):
+                declaration_data = declaration + self.get_applicant_details(declaration[0])
+                print("Try to add: ", declaration_data)
+                add_declaration(*declaration_data)
+                time.sleep(0.2)
 
         page = 0
         while True:

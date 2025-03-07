@@ -58,6 +58,9 @@ def add_declaration(declaration_id,
                     responsible_person,
                     *contacts):
 
+    if not contacts:
+        return
+
     query = session.query(Contact).filter(or_(*(Contact.value == contact for contact in contacts)))
 
     if not session.query(query.exists()).scalar():

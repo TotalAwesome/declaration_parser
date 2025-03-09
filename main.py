@@ -18,7 +18,21 @@ class Parser(requests.Session):
 
     def request(self, *args, **kwargs):
         print(args, kwargs)
-        return super().request(*args, **kwargs)
+        while True:
+            err = None
+            try:
+                response = super().request(*args, **kwargs)
+            except Exception as exc:
+                err = True
+                print(exc)
+            if err or response.status_code >= 500:
+                print('Retry: ', args, kwargs)
+                time.sleep(3)
+                continue
+            elif response.status_code == 401:
+                self.authenticate()
+            else:
+                return response
 
     def authenticate(self):
         response = self.post(url=LOGIN_URL, json=AUTH_PAYLOAD)
@@ -28,7 +42,7 @@ class Parser(requests.Session):
     def get_declaration_page(self, page=0, date=END_DATE):
         url = DECLARATIONS_URL.format("get")
         payload = deepcopy(GET_PAYLOAD)
-        payload['filter']['regDate'] = {"minDate": date, "maxDate": date}
+        payload['filter']['regDate'] = {"minDate": START_DATE, "maxDate": END_DATE}
         payload['page'] = page
         response = self.post(url=url, json=payload)
         if response.status_code == 200:
@@ -40,15 +54,18 @@ class Parser(requests.Session):
         response = self.get(url)
         if response.status_code == 200:
             return unpack_declaration(json.loads(response.text))
+        else:
+            raise Exception(f"{response.status_code}: {response.text}")
 
     def get_all_declarations(self):
 
         def extend_info(declaration):
-            if declaration_not_exists(declaration[0]):
-                declaration_data = declaration + self.get_applicant_details(declaration[0])
+            if declaration_not_exists(declaration['id']):
+                declaration_data = declaration | self.get_applicant_details(declaration['id'])
                 print("Try to add: ", declaration_data)
-                add_declaration(*declaration_data)
-                time.sleep(0.2)
+                add_declaration(**declaration_data)
+            else:
+                print("Declaration exists: ", declaration['id'])
 
         page = 0
         while True:
@@ -57,6 +74,7 @@ class Parser(requests.Session):
             if len(data) != PAGE_SIZE:
                 break
             page += 1
+            time.sleep(2)
         return
 
 

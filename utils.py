@@ -1,14 +1,29 @@
+import datetime
+from settings import DATE_FORMAT
+
+
+class ContactType:
+    PHONE = 1
+    FAX = 3
+    EMAIL = 4
+    WEB = 5
+
 
 def unpack_search_item(item):
-    return (
-        item["id"],
-        item["declDate"],
+    return dict(
+        id=item["id"],
+        date=datetime.datetime.strptime(item["declDate"], DATE_FORMAT).date(),
+        product_group=item["group"],
+        product=item["productFullName"],
+        applicant=item["applicantName"],
+        applicant_address=item["applicantAddress"],
     )
 
 
 def unpack_declaration(declaration):
+    result = {}
     applicant = declaration["applicant"]
-    head_person = " ".join(
+    result['head_person'] = " ".join(
         (
             applicant["surname"] or "",
             applicant["firstName"] or "",
@@ -16,7 +31,7 @@ def unpack_declaration(declaration):
             ("({})".format(applicant["headPosition"]) if applicant["headPosition"] else None) or ""
         )
     ).strip() or None
-    responsible_person = " ".join(
+    result['responsible_person'] = " ".join(
         (
             applicant["responsibleSurname"] or "",
             applicant["responsibleFirstName"] or "",
@@ -24,10 +39,14 @@ def unpack_declaration(declaration):
             ("({})".format(applicant["responsiblePosition"]) if applicant["responsiblePosition"] else None) or ""
         )
     ).strip() or None
-    contacts = (i["value"].lower() for i in applicant["contacts"] if i)
-    return (
-        applicant["fullName"] or head_person or responsible_person,
-        head_person,
-        responsible_person,
-        *set(contacts)
-    )
+
+    for contact in applicant["contacts"]:
+        keys = {
+            ContactType.EMAIL: "email",
+            ContactType.WEB: "web",
+            ContactType.PHONE: "phone",
+            ContactType.FAX: "fax",
+        }
+        if key := keys.get(contact['idContactType']):
+            result[key] = contact['value']
+    return result

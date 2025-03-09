@@ -1,3 +1,4 @@
+import argparse
 import requests
 import orjson as json
 import time
@@ -6,7 +7,7 @@ from utils import *
 from copy import deepcopy
 
 from settings import *
-from db import add_declaration, declaration_not_exists
+from db import add_declaration, declaration_not_exists, get_max_date, select_for_export
 
 
 class Parser(requests.Session):
@@ -78,7 +79,41 @@ class Parser(requests.Session):
         return
 
 
-if __name__ == "__main__":
+def parse_data(args):
+    if args.start_date:
+        globals()['START_DATE'] = args.start_date
+    elif max_date := get_max_date():
+        globals()['START_DATE'] = max_date.strftime(DATE_FORMAT)
+    if args.end_date:
+        globals()['END_DATE'] = args.end_date
+
     parser = Parser()
-    data = parser.get_all_declarations()
+    parser.get_all_declarations()
+
+
+def export_xls(args):
+    data = select_for_export(start_date=args.start_date, end_date=args.end_date)
+    save_xlsx(data=data)
     pass
+
+
+if __name__ == "__main__":
+    arg_parser = argparse.ArgumentParser(description="Парсер деклараций.", add_help=False)
+    commands = arg_parser.add_subparsers()
+
+    parse = commands.add_parser('parse', help='Произвести сбор данных.')
+    parse.add_argument('-s', '--start_date', action='store', help='Начало периода для сбора. Пример: 2024-06-25')
+    parse.add_argument('-e', '--end_date', action='store', help='Конец периода для сбора. Пример: 2024-06-25')
+    parse.set_defaults(func=parse_data)
+
+    export = commands.add_parser('export', help='Произвести выгрузку данных.')
+    export.add_argument('-s', '--start_date', action='store', help='Начало периода для сбора. Пример: 2024-06-25')
+    export.add_argument('-e', '--end_date', action='store', help='Конец периода для сбора. Пример: 2024-06-25')
+    export.set_defaults(func=export_xls)
+
+    args = arg_parser.parse_args()
+    args.func(args)
+
+    # parser = Parser()
+    # data = parser.get_all_declarations()
+    # pass

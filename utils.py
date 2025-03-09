@@ -1,4 +1,6 @@
 import datetime
+import xlsxwriter
+from itertools import product
 from settings import DATE_FORMAT
 
 
@@ -50,3 +52,33 @@ def unpack_declaration(declaration):
         if key := keys.get(contact['idContactType']):
             result[key] = contact['value']
     return result
+
+
+def save_xlsx(headers=None, data=None, filepath="report.xlsx"):
+    if not headers:
+        headers = (
+            'id',
+            'Дата',
+            'Предприятие',
+            'Руководитель',
+            'Заявитель',
+            'Группа товоаров',
+            'Наименование товоара',
+            'Телефон',
+            'Факс',
+            'Сайт',
+            'E-mail'
+        )
+    workbook = xlsxwriter.Workbook(filepath)
+    sheet = workbook.add_worksheet()
+    for column, value in enumerate(headers):
+        sheet.write(0, column, value)
+
+    sheet.autofilter(0, 0, 0, len(headers))  # Включаем фильтры
+    sheet.freeze_panes(1, 1)  # Фиксируем первую строчку с фильтрами
+
+    for row, line in enumerate(data):
+        for column, value in enumerate(line):
+            sheet.write(row + 1, column, value)
+    sheet.autofit(max_width=300)
+    workbook.close()

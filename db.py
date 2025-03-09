@@ -5,14 +5,13 @@ from sqlalchemy import (
     Column,
     Integer,
     String,
-    ForeignKey,
-    SmallInteger,
     Date,
-    or_
+    func,
+    select,
+    text
 )
-from sqlalchemy.orm import DeclarativeBase, relationship, Session
+from sqlalchemy.orm import DeclarativeBase, Session
 
-from settings import DATE_FORMAT
 
 engine = create_engine("sqlite:///db.sql", echo=False)
 session = Session(bind=engine)
@@ -53,3 +52,31 @@ def add_declaration(**kwargs):
     session.add(declaration)
     session.commit()
 
+
+def get_max_date():
+    statement = select(func.max(Declaration.date))
+    return session.execute(statement).scalar()
+
+
+def select_for_export(start_date, end_date):
+    where_statement = ""
+    if start_date and end_date:
+        where_statement = f"WHERE date BETWEEN '{start_date}' AND '{end_date}'"
+    query = f"""
+    SELECT 
+        id,
+        date,
+        applicant,
+        head_person,
+        responsible_person,
+        product_group,
+        product,
+        phone,
+        fax,
+        web,
+        email
+    FROM declarations
+    {where_statement}
+    ORDER BY date DESC
+    """
+    return session.execute(text(query)).fetchall()

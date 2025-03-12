@@ -114,6 +114,3 @@ if __name__ == "__main__":
     args = arg_parser.parse_args()
     args.func(args)
 
-    # parser = Parser()
-    # data = parser.get_all_declarations()
-    # pass
